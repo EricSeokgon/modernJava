@@ -7,5 +7,14 @@ public class Variables {
         float myFloat = 3.12312312312344F;
 
         int result = myInt + 3;
+
+        char myChar = 'A';
+        System.out.println(myChar);
+
+        boolean myBool = true;
+        boolean myBool2 = false;
+
+        System.out.println(myBool);
+
     }
 }
