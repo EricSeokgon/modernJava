@@ -14,6 +14,5 @@ public class Variables {
         boolean myBool2 = false;
 
         System.out.println(myBool);
-
     }
 }
