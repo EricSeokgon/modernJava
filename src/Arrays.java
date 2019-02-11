@@ -29,7 +29,15 @@ public class Arrays {
                 {301, 302, 303, 304},
                 {401, 402, 403, 404}
         };
-        
+
+        for (int[] floor : twoDimArr) {
+            for(int home : floor){
+                if (home == 202 || home == 403) {
+                    continue;
+                }
+                System.out.println(home);
+            }
+        }
 
     }
 }
