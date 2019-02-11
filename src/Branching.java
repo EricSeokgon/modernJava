@@ -25,11 +25,14 @@ public class Branching {
         switch (color) {
             case "red":
                 System.out.println("열정적이군요");
+                break;
             case "blue":
                 System.out.println("감성적이군요");
+                break;
             case "green":
             case "yello":
                 System.out.println("잘 모르겠어요");
+                break;
             default:
                 System.out.println("알수없어요");
         }
