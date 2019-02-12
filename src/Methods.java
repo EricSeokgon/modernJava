@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Methods {
     public static void main(String[] args) {
         int a = 5;
@@ -6,6 +9,16 @@ public class Methods {
         int result = add(a, b);
         System.out.println(result);
 
+        int byValue = 5;
+        callByValue(byValue);
+        System.out.println(byValue);
+
+        List<String> byRef = new ArrayList<>();
+        byRef.add("red");
+        byRef.add("blue");
+        System.out.println(byRef);
+        callByReference(byRef);
+        System.out.println(byRef);
     }
 
     //메소드로 분리
@@ -16,5 +29,10 @@ public class Methods {
     //call by value
     public static void callByValue(int param) {
         param = param + 5;
+    }
+
+    //call by reference
+    public static void callByReference(List param) {
+        param.add("white");
     }
 }
