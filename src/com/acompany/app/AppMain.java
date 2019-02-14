@@ -7,8 +7,9 @@ public class AppMain {
         Product myProd = new Product();
         myProd.setProducrId(1);
         myProd.setPrice(2000);
-        myProd.setTitle("아이폰5");
+        myProd.setTitle("갤럭시S8");
         myProd.setCreateDate("2020-08-15");
         System.out.println(myProd);
+
     }
 }
