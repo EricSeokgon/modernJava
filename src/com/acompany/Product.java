@@ -6,6 +6,16 @@ public class Product {
     private int price;
     private String createDate;
 
+    public Product() {
+    }
+
+    public Product(long producrId, String title, int price, String createDate) {
+        this.producrId = producrId;
+        this.title = title;
+        this.price = price;
+        this.createDate = createDate;
+    }
+
     public long getProducrId() {
         return producrId;
     }
