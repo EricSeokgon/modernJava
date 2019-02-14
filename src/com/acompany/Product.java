@@ -47,4 +47,14 @@ public class Product {
     public void setCreateDate(String createDate) {
         this.createDate = createDate;
     }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "producrId=" + producrId +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", createDate='" + createDate + '\'' +
+                '}';
+    }
 }
