@@ -10,6 +10,5 @@ public class AppMain {
         myProd.setTitle("갤럭시S8");
         myProd.setCreateDate("2020-08-15");
         System.out.println(myProd);
-
     }
 }
