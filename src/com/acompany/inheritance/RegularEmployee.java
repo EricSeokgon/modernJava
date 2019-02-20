@@ -18,4 +18,5 @@ public class RegularEmployee extends Employee {
                 "transportationAllowance=" + transportationAllowance +
                 '}';
     }
+
 }
