@@ -17,5 +17,6 @@ public class RegularEmployee extends Employee {
         return "RegularEmployee{" +
                 "transportationAllowance=" + transportationAllowance +
                 '}';
+
     }
 }
