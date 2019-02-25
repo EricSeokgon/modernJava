@@ -9,4 +9,5 @@ class LengthComparator implements Comparable<String> {
     public int compareTo(String o) {
         return 0;
     }
+
 }
