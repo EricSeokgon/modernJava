@@ -14,4 +14,5 @@ public class LambdaTest2 {
 
         System.out.println(animals);
     }
+
 }
