@@ -3,6 +3,7 @@ package java8.stream;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 public class StreamEx {
