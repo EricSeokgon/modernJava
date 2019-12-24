@@ -119,6 +119,9 @@ public class StreamEx {
         //파일 스트림
         Stream<String> lines = Files.lines(Paths.get("C:\\Users\\user\\IdeaProjects\\modernJava\\src\\java8\\stream\\file.txt"), Charset.forName("UTF-8"));
 
+        //배열을 이용해서 병렬 스트림을 생성
+        Stream<String> parallel = Arrays.stream(arr).parallel();
+
     }
 
     //컬렉션 스트림
