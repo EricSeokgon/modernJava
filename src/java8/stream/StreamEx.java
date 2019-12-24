@@ -115,13 +115,17 @@ public class StreamEx {
         //정규표현식 예제
         Stream<String> stream3 = Pattern.compile(", ").splitAsStream("Eric, Elena, java");
         stream3.forEach(System.out::print);
-
+        System.out.println();
         //파일 스트림
         Stream<String> lines = Files.lines(Paths.get("C:\\Users\\user\\IdeaProjects\\modernJava\\src\\java8\\stream\\file.txt"), Charset.forName("UTF-8"));
 
         //배열을 이용해서 병렬 스트림을 생성
         Stream<String> parallel = Arrays.stream(arr).parallel();
 
+        //컬렉션과  배열이 아닌경우 병렬스트림 방법
+        IntStream parallel1 = IntStream.range(1, 150).parallel();
+        boolean parallel2 = parallel1.isParallel();
+        System.out.println(parallel2);
     }
 
     //컬렉션 스트림
