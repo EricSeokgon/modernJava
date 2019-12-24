@@ -5,12 +5,10 @@ import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
-import java.util.stream.IntStream;
-import java.util.stream.LongStream;
-import java.util.stream.Stream;
-import java.util.stream.StreamSupport;
+import java.util.stream.*;
 
 public class StreamEx {
     public static void main(String[] args) {
@@ -98,6 +96,14 @@ public class StreamEx {
         //메소드를 이용해서 박싱
         Stream<Integer> boxed = IntStream.range(1, 5).boxed();
         boxed.forEach(System.out::print);
+
+        //난수 방생
+        DoubleStream doubles = new Random().doubles(3);
+        doubles.forEach(System.out::print);
+
+        //문자열 스트링
+        IntStream chars = "Stream".chars();
+        chars.forEach(System.out::print);
 
 
     }
