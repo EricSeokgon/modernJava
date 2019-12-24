@@ -71,6 +71,10 @@ public class StreamEx {
         Stream<String> stream2 = list.stream();
         Stream<String> parallelStream = list.parallelStream();
 
+        //스트림 빌더
+        Stream<String> build = Stream.<String>builder()
+                .add("Eric").add("Elena").add("Java")
+                .build();
     }
 
     //컬렉션 스트림
