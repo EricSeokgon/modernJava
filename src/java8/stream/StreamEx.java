@@ -94,6 +94,12 @@ public class StreamEx {
         range.forEach(System.out::print);
         System.out.println();
         longStream.forEach(System.out::print);
+
+        //메소드를 이용해서 박싱
+        Stream<Integer> boxed = IntStream.range(1, 5).boxed();
+        boxed.forEach(System.out::print);
+
+
     }
 
     //컬렉션 스트림
@@ -109,5 +115,7 @@ public class StreamEx {
     }
 
     //스트림 제너레이터
-    public static<T> Stream<T> generate(Supplier<T> s){return null;}
+    public static <T> Stream<T> generate(Supplier<T> s) {
+        return null;
+    }
 }
