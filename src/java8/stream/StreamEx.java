@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.Random;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.regex.Pattern;
 import java.util.stream.*;
 
 public class StreamEx {
@@ -104,6 +105,11 @@ public class StreamEx {
         //문자열 스트링
         IntStream chars = "Stream".chars();
         chars.forEach(System.out::print);
+        System.out.println();
+
+        //정규표현식 예제
+        Stream<String> stream3 = Pattern.compile(", ").splitAsStream("Eric, Elena, java");
+        stream3.forEach(System.out::print);
 
 
     }
