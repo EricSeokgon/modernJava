@@ -81,6 +81,10 @@ public class StreamEx {
         //Stream.generate()
         Stream<String> generatedStream = Stream.generate(() -> "gen").limit(5);
         generatedStream.forEach(System.out::println);
+
+        //Stream.iterate()
+        Stream<Integer> iteratedStream = Stream.iterate(20, n -> n + 2).limit(5);
+        iteratedStream.forEach(System.out::println);
     }
 
     //컬렉션 스트림
