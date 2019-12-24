@@ -7,6 +7,8 @@ import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
 import java.util.function.Supplier;
+import java.util.stream.IntStream;
+import java.util.stream.LongStream;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -85,6 +87,13 @@ public class StreamEx {
         //Stream.iterate()
         Stream<Integer> iteratedStream = Stream.iterate(20, n -> n + 2).limit(5);
         iteratedStream.forEach(System.out::println);
+
+        //기본 타입형 스트림
+        IntStream range = IntStream.range(1, 5);
+        LongStream longStream = LongStream.rangeClosed(1, 5);
+        range.forEach(System.out::print);
+        System.out.println();
+        longStream.forEach(System.out::print);
     }
 
     //컬렉션 스트림
