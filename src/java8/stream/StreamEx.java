@@ -53,5 +53,16 @@ public class StreamEx {
                 .sum();
         System.out.println(sum);
 
+
+        // 1.생성하기 : 스트림 인스턴스 생성
+        // 2.가공하기 : 필터링 및 맵핑등 원하는 결과를 만들어가는 중간 작업
+        // 3.결과 만들기 : 최종적으로 결과를 만들어내는 작업
+        // 1. 저체 -> 맵핑 -> 필터링1 -> 필터링 2 -> 결과 만들기 -> 결과물
+
+        //배열 스트림
+        String[] arr = new String[]{"a", "b", "c"};
+        Stream<String> stream1 = Arrays.stream(arr);
+        Stream<String> streamOfArrayPart = Arrays.stream(arr, 1, 3);
+
     }
 }
