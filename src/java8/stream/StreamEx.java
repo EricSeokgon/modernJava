@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
 import java.util.function.Function;
+import java.util.function.Supplier;
 import java.util.stream.Stream;
 import java.util.stream.StreamSupport;
 
@@ -75,6 +76,11 @@ public class StreamEx {
         Stream<String> build = Stream.<String>builder()
                 .add("Eric").add("Elena").add("Java")
                 .build();
+        build.forEach(System.out::println);
+
+        //Stream.generate()
+        Stream<String> generatedStream = Stream.generate(() -> "gen").limit(5);
+        generatedStream.forEach(System.out::println);
     }
 
     //컬렉션 스트림
@@ -88,4 +94,7 @@ public class StreamEx {
     public Stream<String> streamOf(List<String> list) {
         return list == null || list.isEmpty() ? Stream.empty() : list.stream();
     }
+
+    //스트림 제너레이터
+    public static<T> Stream<T> generate(Supplier<T> s){return null;}
 }
