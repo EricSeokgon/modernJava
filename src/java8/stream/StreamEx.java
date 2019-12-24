@@ -44,5 +44,13 @@ public class StreamEx {
                 .limit(5)
                 .sorted()
                 .forEach(System.out::println);
+
+        //병렬 스트림
+        Stream<String> strStream = strList.stream();
+        int sum = strStream.parallel()
+                .mapToInt(s -> s.length())
+                .sum();
+        System.out.println(sum);
+
     }
 }
