@@ -1,5 +1,6 @@
 package java8.stream;
 
+import com.acompany.Product;
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
 import java.io.IOException;
@@ -117,7 +118,6 @@ public class StreamEx {
 
         //파일 스트림
         Stream<String> lines = Files.lines(Paths.get("C:\\Users\\user\\IdeaProjects\\modernJava\\src\\java8\\stream\\file.txt"), Charset.forName("UTF-8"));
-
 
     }
 
