@@ -2,6 +2,10 @@ package java8.stream;
 
 import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
+import java.io.IOException;
+import java.nio.charset.Charset;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -12,7 +16,7 @@ import java.util.regex.Pattern;
 import java.util.stream.*;
 
 public class StreamEx {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
 
         //Stream 사용전
         String[] strArr = {"mash-up", "backend", "codingsquid"};
@@ -110,6 +114,9 @@ public class StreamEx {
         //정규표현식 예제
         Stream<String> stream3 = Pattern.compile(", ").splitAsStream("Eric, Elena, java");
         stream3.forEach(System.out::print);
+
+        //파일 스트림
+        Stream<String> lines = Files.lines(Paths.get("C:\\Users\\user\\IdeaProjects\\modernJava\\src\\java8\\stream\\file.txt"), Charset.forName("UTF-8"));
 
 
     }
