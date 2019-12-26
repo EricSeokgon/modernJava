@@ -7,11 +7,9 @@ import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
 import java.util.stream.*;
@@ -132,6 +130,39 @@ public class StreamEx {
         Stream<String> stream5 = Stream.of("Python", "Go", "Swift");
         Stream<String> concat = Stream.concat(stream4, stream5);
         concat.forEach(System.out::println);
+
+        //가공하기
+        List<String> names = Arrays.asList("Eric", "Elena", "java");
+
+        //filtering
+        Stream<String> stream6 = names.stream().filter(name -> name.contains("a"));
+        stream6.forEach(System.out::println);
+
+        //Mapping
+        Stream<String> stream7 = names.stream().map(String::toUpperCase);
+        stream7.forEach(System.out::println);
+
+        //flatMap
+        List<List<String>> lists = Arrays.asList(Arrays.asList("a"), Arrays.asList("b"));
+        lists.forEach(System.out::println);
+
+        //Sorting
+        List<Integer> collect = IntStream.of(14, 11, 20, 39, 23)
+                .sorted()
+                .boxed()
+                .collect(Collectors.toList());
+        System.out.println(collect);
+
+        List<String> lang = Arrays.asList("Java", "Scala", "Groovy", "Python", "Go", "Swift");
+        lang.stream()
+                .sorted()
+                .collect(Collectors.toList());
+        System.out.println(lang);
+
+        lang.stream()
+                .sorted(Comparator.reverseOrder())
+                .collect(Collectors.toList())
+                .forEach(System.out::println);
 
     }
 
