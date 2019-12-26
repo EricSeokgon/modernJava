@@ -171,6 +171,12 @@ public class StreamEx {
                 .sorted((s1, s2) -> s2.length() - s1.length())
                 .collect(Collectors.toList());
 
+         sum = IntStream.of(1, 3, 5, 7, 9)
+                .peek(System.out::println)
+                .sum();
+        System.out.println(sum);
+
+
     }
 
     //컬렉션 스트림
