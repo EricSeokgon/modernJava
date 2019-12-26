@@ -126,6 +126,13 @@ public class StreamEx {
         IntStream parallel1 = IntStream.range(1, 150).parallel();
         boolean parallel2 = parallel1.isParallel();
         System.out.println(parallel2);
+
+        //스트림 연결하기
+        Stream<String> stream4 = Stream.of("Java", "Scala", "Groovy");
+        Stream<String> stream5 = Stream.of("Python", "Go", "Swift");
+        Stream<String> concat = Stream.concat(stream4, stream5);
+        concat.forEach(System.out::println);
+
     }
 
     //컬렉션 스트림
@@ -144,4 +151,5 @@ public class StreamEx {
     public static <T> Stream<T> generate(Supplier<T> s) {
         return null;
     }
+
 }
