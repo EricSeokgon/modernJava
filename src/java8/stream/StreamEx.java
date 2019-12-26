@@ -171,7 +171,7 @@ public class StreamEx {
                 .sorted((s1, s2) -> s2.length() - s1.length())
                 .collect(Collectors.toList());
 
-         sum = IntStream.of(1, 3, 5, 7, 9)
+        sum = IntStream.of(1, 3, 5, 7, 9)
                 .peek(System.out::println)
                 .sum();
         System.out.println(sum);
@@ -180,6 +180,14 @@ public class StreamEx {
         long sum1 = LongStream.of(1, 3, 5, 7, 9).sum();
         System.out.println(count);
         System.out.println(sum);
+
+        OptionalInt min = IntStream.of(1, 3, 5, 7, 9).min();
+        OptionalInt max = IntStream.of(1, 3, 5, 7, 9).max();
+        System.out.println(min + " " + max);
+        DoubleStream.of(1.1, 2.2, 3.3, 4.4, 5.5)
+                .average()
+                .ifPresent(System.out::println);
+
 
     }
 
