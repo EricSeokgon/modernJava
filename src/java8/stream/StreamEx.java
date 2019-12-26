@@ -163,6 +163,13 @@ public class StreamEx {
                 .sorted(Comparator.reverseOrder())
                 .collect(Collectors.toList())
                 .forEach(System.out::println);
+        lang.stream()
+                .sorted(Comparator.comparingInt(String::length))
+                .collect(Collectors.toList());
+
+        lang.stream()
+                .sorted((s1, s2) -> s2.length() - s1.length())
+                .collect(Collectors.toList());
 
     }
 
