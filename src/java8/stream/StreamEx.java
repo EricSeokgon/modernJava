@@ -176,6 +176,10 @@ public class StreamEx {
                 .sum();
         System.out.println(sum);
 
+        long count = IntStream.of(1, 3, 5, 7, 9).count();
+        long sum1 = LongStream.of(1, 3, 5, 7, 9).sum();
+        System.out.println(count);
+        System.out.println(sum);
 
     }
 
