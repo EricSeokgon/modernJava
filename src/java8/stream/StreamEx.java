@@ -330,6 +330,17 @@ public class StreamEx {
         }).collect(Collectors.toList());
         System.out.println(counter);
 
+        //Null-safe 스트림 생성하기
+        List<Integer> intList1 = Arrays.asList(1, 2, 3);
+        List<String> strList1 = Arrays.asList("a", "b", "c");
+
+        //Stream<Integer> tStream = collectionToStream(intList1);
+        List<String> nullList = null;
+
+/*        nullList.stream()
+                .filter(str -> str.contains("a"))
+                .map(String::length)
+                .forEach(System.out::println);*/
     }
 
     //컬렉션 스트림
@@ -347,6 +358,10 @@ public class StreamEx {
     //스트림 제너레이터
     public static <T> Stream<T> generate(Supplier<T> s) {
         return null;
+    }
+
+    public<T> Stream<T> collectionToStream(Collection<T> collection) {
+        return Optional.ofNullable(collection).map(Collection::stream).orElseGet(Stream::empty);
     }
 
 }
