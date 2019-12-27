@@ -237,6 +237,11 @@ public class StreamEx {
         Double collect4 = productList1.stream()
                 .collect(Collectors.averagingInt(Product::getAmount));
         System.out.println(collect4);
+
+        //Collectors.summingInt()
+        Integer collect5 = productList1.stream()
+                .collect(Collectors.summingInt(Product::getAmount));
+        System.out.println(collect5);
     }
 
     //컬렉션 스트림
