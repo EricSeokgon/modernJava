@@ -268,7 +268,15 @@ public class StreamEx {
                 .collect(Collectors.collectingAndThen(Collectors.toSet(), Collections::unmodifiableSet));
         System.out.println("collectingAndThen() : " + collect8);
 
+        //Collector.of()
+        Collector<Object, LinkedList<Object>, LinkedList<Object>> linkedListCollector = Collector.of(LinkedList::new, LinkedList::add, (first, second) -> {
+            first.addAll(second);
+            return first;
+        });
 
+        LinkedList<Object> collect9 = productList1.stream()
+                .collect(linkedListCollector);
+        System.out.println(collect9);
     }
 
     //컬렉션 스트림
