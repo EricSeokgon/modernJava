@@ -277,6 +277,21 @@ public class StreamEx {
         LinkedList<Object> collect9 = productList1.stream()
                 .collect(linkedListCollector);
         System.out.println(collect9);
+
+        //Matching
+        List<String> names1 = Arrays.asList("Eric", "Elena", "Java");
+
+        boolean anyMatch = names1.stream()
+                .anyMatch(name -> name.contains("a"));
+        boolean allMatch = names1.stream()
+                .allMatch(name -> name.length() > 3);
+        boolean noneMatch = names1.stream()
+                .noneMatch(name -> name.endsWith("s"));
+        names1.stream().forEach(System.out::println);
+        System.out.println(anyMatch);
+        System.out.println(allMatch);
+        System.out.println(noneMatch);
+
     }
 
     //컬렉션 스트림
