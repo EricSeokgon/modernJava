@@ -232,6 +232,11 @@ public class StreamEx {
                 .map(Product::getName)
                 .collect(Collectors.joining(", ", "<", ">"));
         System.out.println(collect3);
+
+        //Collectors.averageingInt()
+        Double collect4 = productList1.stream()
+                .collect(Collectors.averagingInt(Product::getAmount));
+        System.out.println(collect4);
     }
 
     //컬렉션 스트림
