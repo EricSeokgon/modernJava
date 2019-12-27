@@ -208,6 +208,20 @@ public class StreamEx {
                     return a + b;
                 });
         System.out.println(reduceParalle);
+
+        //Collecting
+        List<Product> productList1 = Arrays.asList(new Product(23, "potatoes"),
+                new Product(14, "orange"),
+                new Product(13, "lemon"),
+                new Product(23, "bread"),
+                new Product(13, "sugar"));
+
+        //Collectors.toList()
+        List<String> collect1 = productList1.stream()
+                .map(Product::getName)
+                .collect(Collectors.toList());
+        System.out.println(collect1);
+
     }
 
     //컬렉션 스트림

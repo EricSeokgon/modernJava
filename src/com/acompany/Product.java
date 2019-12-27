@@ -5,15 +5,34 @@ public class Product {
     private String title;
     private int price;
     private String createDate;
+    private String name;
+    private int amount;
 
     public Product() {
     }
 
-    public Product(long producrId, String title, int price, String createDate) {
+    public Product(long producrId, String title, int price, String createDate, String name, int amount) {
         this.producrId = producrId;
         this.title = title;
         this.price = price;
         this.createDate = createDate;
+        this.name = name;
+        this.amount = amount;
+    }
+
+    public Product(int amount, String name) {
+        this.amount = amount;
+        this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "producrId=" + producrId +
+                ", title='" + title + '\'' +
+                ", price=" + price +
+                ", createDate='" + createDate + '\'' +
+                '}';
     }
 
     public long getProducrId() {
@@ -48,13 +67,19 @@ public class Product {
         this.createDate = createDate;
     }
 
-    @Override
-    public String toString() {
-        return "Product{" +
-                "producrId=" + producrId +
-                ", title='" + title + '\'' +
-                ", price=" + price +
-                ", createDate='" + createDate + '\'' +
-                '}';
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAmount() {
+        return amount;
+    }
+
+    public void setAmount(int amount) {
+        this.amount = amount;
     }
 }
