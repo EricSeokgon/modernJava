@@ -257,6 +257,11 @@ public class StreamEx {
         Map<Integer, List<Product>> collect6 = productList1.stream()
                 .collect(Collectors.groupingBy(Product::getAmount));
         System.out.println(collect6);
+
+        //Collectors.partitioningBy()
+        Map<Boolean, List<Product>> collect7 = productList1.stream()
+                .collect(Collectors.partitioningBy(el -> el.getAmount() > 15));
+        System.out.println(collect7);
     }
 
     //컬렉션 스트림
