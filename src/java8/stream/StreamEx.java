@@ -188,7 +188,26 @@ public class StreamEx {
                 .average()
                 .ifPresent(System.out::println);
 
+        //Reduction
+        int reduceTowparams = IntStream.range(1, 4)
+                .reduce(10, Integer::sum);
+        System.out.println(reduceTowparams);
 
+        Integer combiner_was_called = Stream.of(1, 2, 3)
+                .reduce(10,
+                        Integer::sum, (a, b) -> {
+                            System.out.println("combiner was called");
+                            return a + b;
+                        });
+        System.out.println(combiner_was_called);
+
+        Integer reduceParalle = Arrays.asList(1, 2, 3)
+                .parallelStream()
+                .reduce(10, Integer::sum, (a, b) -> {
+                    System.out.println("combiner was called");
+                    return a + b;
+                });
+        System.out.println(reduceParalle);
     }
 
     //컬렉션 스트림
