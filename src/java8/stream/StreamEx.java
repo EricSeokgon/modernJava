@@ -292,6 +292,19 @@ public class StreamEx {
         System.out.println(allMatch);
         System.out.println(noneMatch);
 
+        Optional<String> first = list.stream()
+                .filter(el -> {
+                    System.out.println("filter() was called.");
+                    return el.contains("a");
+                })
+                .map(el -> {
+                    System.out.println("map() was called.");
+                    return el.toUpperCase();
+                })
+                .findFirst();
+        System.out.println(first);
+
+
     }
 
     //컬렉션 스트림
