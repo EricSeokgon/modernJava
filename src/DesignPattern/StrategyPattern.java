@@ -2,23 +2,20 @@ package DesignPattern;
 
 
 //getString()을 재사용
-class A {
+
+//상속을 이용한 방법
+class B implements A {
+
+    @Override
     public String getString() {
         return "Hello World";
     }
 }
 
-//상속을 이용한 방법
-class B extends A {
-
-}
-
 //합성을 이용한 방법
-class C {
+class C implements A{
+    @Override
     public String getString() {
-        A a = new A();
-
-        return a.getString();
+        return "Hello LichKing";
     }
 }
-
