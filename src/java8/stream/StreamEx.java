@@ -12,6 +12,13 @@ import java.util.regex.Pattern;
 import java.util.stream.*;
 
 public class StreamEx {
+    private static int counter;
+
+    //지연 처리 Lazy Invocation
+    private static void wasCalled() {
+        counter++;
+    }
+
     public static void main(String[] args) throws IOException {
 
         //Stream 사용전
@@ -309,6 +316,20 @@ public class StreamEx {
         Optional<String> first1 = stream8.stream().findFirst();
         Optional<String> any = stream8.stream().findAny();
 
+        counter = 0;
+        Stream<String> stream9 = list.stream()
+                .filter(el -> {
+                    wasCalled();
+                    return el.contains("a");
+                });
+        System.out.println(counter);
+
+        list.stream().filter(el -> {
+            wasCalled();
+            return el.contains("a");
+        }).collect(Collectors.toList());
+        System.out.println(counter);
+
     }
 
     //컬렉션 스트림
@@ -326,12 +347,6 @@ public class StreamEx {
     //스트림 제너레이터
     public static <T> Stream<T> generate(Supplier<T> s) {
         return null;
-    }
-
-    //지연 처리 Lazy Invocation
-    private long counter;
-    private void wasCalled(){
-        counter++;
     }
 
 }
