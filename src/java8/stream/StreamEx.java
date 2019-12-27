@@ -247,6 +247,16 @@ public class StreamEx {
                 .mapToInt(Product::getAmount)
                 .sum();
         System.out.println(sum2);
+
+        //Collectors.summarizingInt()
+        IntSummaryStatistics statistics = productList1.stream()
+                .collect(Collectors.summarizingInt((Product::getAmount)));
+        System.out.println(statistics);
+
+        //Collectors.groupingBy()
+        Map<Integer, List<Product>> collect6 = productList1.stream()
+                .collect(Collectors.groupingBy(Product::getAmount));
+        System.out.println(collect6);
     }
 
     //컬렉션 스트림
