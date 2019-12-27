@@ -222,6 +222,11 @@ public class StreamEx {
                 .collect(Collectors.toList());
         System.out.println(collect1);
 
+        //Collectors.joining()
+        String collect2 = productList1.stream()
+                .map(Product::getName)
+                .collect(Collectors.joining(","));
+        System.out.println(collect2);
     }
 
     //컬렉션 스트림
