@@ -360,7 +360,7 @@ public class StreamEx {
         return null;
     }
 
-    public<T> Stream<T> collectionToStream(Collection<T> collection) {
+    public <T> Stream<T> collectionToStream(Collection<T> collection) {
         return Optional.ofNullable(collection).map(Collection::stream).orElseGet(Stream::empty);
     }
 
