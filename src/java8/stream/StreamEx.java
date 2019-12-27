@@ -302,10 +302,12 @@ public class StreamEx {
         System.out.println(first);
 
         //스트림 재사용
-        Stream<String> stream8 = Stream.of("Eric", "elena", "Java")
-                .filter(name -> name.contains("a"));
-        Optional<String> first1 = stream8.findFirst();
-        Optional<String> any = stream8.findAny();
+        List<String> stream8 = Stream.of("Eric", "elena", "Java")
+                .filter(name -> name.contains("a"))
+                .collect(Collectors.toList());
+
+        Optional<String> first1 = stream8.stream().findFirst();
+        Optional<String> any = stream8.stream().findAny();
 
     }
 
@@ -324,6 +326,12 @@ public class StreamEx {
     //스트림 제너레이터
     public static <T> Stream<T> generate(Supplier<T> s) {
         return null;
+    }
+
+    //지연 처리 Lazy Invocation
+    private long counter;
+    private void wasCalled(){
+        counter++;
     }
 
 }
