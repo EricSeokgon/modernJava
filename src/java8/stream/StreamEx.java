@@ -1,15 +1,12 @@
 package java8.stream;
 
 import com.acompany.Product;
-import com.sun.xml.internal.ws.policy.EffectiveAlternativeSelector;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
-import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.function.Supplier;
 import java.util.regex.Pattern;
 import java.util.stream.*;
@@ -304,6 +301,11 @@ public class StreamEx {
                 .findFirst();
         System.out.println(first);
 
+        //스트림 재사용
+        Stream<String> stream8 = Stream.of("Eric", "elena", "Java")
+                .filter(name -> name.contains("a"));
+        Optional<String> first1 = stream8.findFirst();
+        Optional<String> any = stream8.findAny();
 
     }
 
