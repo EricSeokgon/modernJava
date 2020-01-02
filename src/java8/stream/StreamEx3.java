@@ -50,7 +50,18 @@ public class StreamEx3 {
                 .filter(number -> number % 2 == 0);
         stream.collect(Collectors.toList());
 
+        Stream<Integer> stream1 = Stream.of(1, 2, 3, 4, 5);
+        Stream<Integer> peek = stream1.peek(System.out::println);
 
+        peek.collect(Collectors.toList());
 
+        Object obj = null;
+        boolean b = 1 == 2 && obj.toString().equals(123);
+
+        List<String> list = Arrays.asList("a", "b", "c");
+        boolean b1 = list.stream().allMatch(str -> {
+            System.out.println(str);
+            return str.equals("d");
+        });
     }
 }
