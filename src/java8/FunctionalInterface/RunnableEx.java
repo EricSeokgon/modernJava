@@ -1,10 +1,7 @@
 package java8.FunctionalInterface;
 
 import java.util.concurrent.Callable;
-import java.util.function.Consumer;
-import java.util.function.Function;
-import java.util.function.Predicate;
-import java.util.function.Supplier;
+import java.util.function.*;
 
 public class RunnableEx {
     public static void main(String[] args) {
@@ -22,6 +19,10 @@ public class RunnableEx {
 
         Predicate<String> p = str -> str.isEmpty();
         final boolean hello = p.test("hello");
+
+        UnaryOperator<String> u = str -> str + " operator";
+        String hello_unary = u.apply("hello unary");
+
 
 
     }
