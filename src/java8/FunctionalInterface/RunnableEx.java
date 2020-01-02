@@ -2,6 +2,7 @@ package java8.FunctionalInterface;
 
 import java.util.concurrent.Callable;
 import java.util.function.Consumer;
+import java.util.function.Function;
 import java.util.function.Supplier;
 
 public class RunnableEx {
@@ -14,6 +15,11 @@ public class RunnableEx {
 
         Consumer<String> c = str -> System.out.println(str);
         c.accept("hello consumer");
+
+        Function<String, Integer> f = str -> Integer.parseInt(str);
+        Integer apply = f.apply("1");
+
+
 
     }
 }
