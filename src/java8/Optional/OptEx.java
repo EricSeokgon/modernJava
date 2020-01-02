@@ -1,6 +1,9 @@
 package java8.Optional;
 
 import java.util.Optional;
+import java.util.OptionalDouble;
+import java.util.OptionalInt;
+import java.util.OptionalLong;
 
 
 public class OptEx {
@@ -49,6 +52,11 @@ public class OptEx {
         Optional<Object> empty2 = Optional.empty();
         Object obj = empty2.map(Object::getClass)
                 .orElse(null);
+
+
+        OptionalInt empty3 = OptionalInt.empty();
+        OptionalDouble empty4 = OptionalDouble.empty();
+        OptionalLong empty5 = OptionalLong.empty();
 
     }
 
