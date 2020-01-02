@@ -1,9 +1,6 @@
 package java8.stream;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
@@ -54,5 +51,14 @@ public class StreamEx2 {
         //forEach
         Set<Integer> set = ages1.stream().collect(Collectors.toSet());
         set.forEach(x -> System.out.println(x));
+
+        //iterator
+        Iterator<String> iter = names.stream().iterator();
+        while (iter.hasNext()) {
+            System.out.println(iter.next());
+        }
+
+        //noneMatch, anyMatch, allMatch
+        System.out.println(ages1.stream().filter(x -> x > 1).noneMatch(x -> x > 2));
     }
 }
