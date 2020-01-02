@@ -36,5 +36,9 @@ public class StreamEx2 {
             return x.concat("s");
         }).forEach(x -> System.out.println(x));
 
+        //Limit
+        List<Integer> ages = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
+        ages.stream().filter(x -> x > 3).limit(3).forEach(x-> System.out.println(x));
+
     }
 }
