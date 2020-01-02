@@ -1,6 +1,7 @@
 package java8.FunctionalInterface;
 
 import java.util.concurrent.Callable;
+import java.util.function.Consumer;
 import java.util.function.Supplier;
 
 public class RunnableEx {
@@ -10,6 +11,9 @@ public class RunnableEx {
 
         Supplier<String> s = () -> "hello supplier";
         String result = s.get();
+
+        Consumer<String> c = str -> System.out.println(str);
+        c.accept("hello consumer");
 
     }
 }
