@@ -23,6 +23,11 @@ public class RunnableEx {
         UnaryOperator<String> u = str -> str + " operator";
         String hello_unary = u.apply("hello unary");
 
+        BinaryOperator<String> b = (str1, str2) -> str1 + " " + str2;
+        String apply1 = b.apply("hello", "binary");
+
+        BiPredicate<String, Integer> bp = (str, num) -> str.equals(Integer.toString(num));
+        boolean test = bp.test("1", 1);
 
 
     }
