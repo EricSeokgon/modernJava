@@ -1,5 +1,7 @@
 package java8.stream;
 
+import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
+
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -36,5 +38,19 @@ public class StreamEx3 {
                 .collect(Collectors.toList());
 
         System.out.println(iterate);
+
+        Stream.iterate(1, n -> 1 + n)
+                .limit(6)
+                .peek(System.out::println) //스트림을 순회하며 하나씩 요소를 꺼내 출력하는 구문
+                .filter(number -> number % 2 == 0);
+
+        Stream<Integer> stream = Stream.iterate(1, n -> 1 + n)
+                .limit(6)
+                .peek(System.out::println) //스트림을 순회하며 하나씩 요소를 꺼내 출력하는 구문
+                .filter(number -> number % 2 == 0);
+        stream.collect(Collectors.toList());
+
+
+
     }
 }
