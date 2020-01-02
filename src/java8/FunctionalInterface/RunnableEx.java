@@ -1,5 +1,7 @@
 package java8.FunctionalInterface;
 
+import java.io.FilenameFilter;
+import java.util.Comparator;
 import java.util.concurrent.Callable;
 import java.util.function.*;
 
@@ -31,6 +33,9 @@ public class RunnableEx {
 
         BiFunction<Integer, String, String> bf = (num, str) -> String.valueOf(num) + str;
         String apply2 = bf.apply(5, "678");
+
+        Comparator<String> filter = (str1, str2) -> str1.compareTo(str2);
+        int compare = filter.compare("aaa", "bbb");
 
 
 
