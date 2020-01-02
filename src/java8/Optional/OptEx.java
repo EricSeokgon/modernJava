@@ -43,7 +43,9 @@ public class OptEx {
             Object obj = new Object();
             //obj.setitem();
             //obj.setName();
+            return "";
         });
+
 
         Optional<Integer> integerOptional = Optional.empty();
         Integer integer = integerOptional.orElse(5);
@@ -52,7 +54,6 @@ public class OptEx {
         Optional<Object> empty2 = Optional.empty();
         Object obj = empty2.map(Object::getClass)
                 .orElse(null);
-
 
         OptionalInt empty3 = OptionalInt.empty();
         OptionalDouble empty4 = OptionalDouble.empty();
