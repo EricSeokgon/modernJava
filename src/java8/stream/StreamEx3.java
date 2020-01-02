@@ -1,6 +1,7 @@
 package java8.stream;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class StreamEx3 {
@@ -28,5 +29,12 @@ public class StreamEx3 {
             }
         }
         System.out.println(evenList);
+
+        List<Integer> iterate = Stream.iterate(1, n -> n + 1)
+                .limit(6)
+                .filter(number -> number % 2 == 0)
+                .collect(Collectors.toList());
+
+        System.out.println(iterate);
     }
 }
