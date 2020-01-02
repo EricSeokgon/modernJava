@@ -1,5 +1,6 @@
 package java8.stream;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.DoubleStream;
@@ -38,7 +39,14 @@ public class StreamEx2 {
 
         //Limit
         List<Integer> ages = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9);
-        ages.stream().filter(x -> x > 3).limit(3).forEach(x-> System.out.println(x));
+        ages.stream().filter(x -> x > 3).limit(3).forEach(x -> System.out.println(x));
 
+        //최종연산
+        //reduce
+        ArrayList<Integer> ages1 = new ArrayList<>();
+        ages1.add(1);
+        ages1.add(2);
+        ages1.add(3);
+        System.out.println(ages1.stream().reduce((x, y) -> x + y).get());
     }
 }
