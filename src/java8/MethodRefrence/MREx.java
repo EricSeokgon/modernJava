@@ -1,6 +1,7 @@
 package java8.MethodRefrence;
 
 import java.util.function.Function;
+import java.util.function.Predicate;
 import java.util.function.Supplier;
 
 public class MREx {
@@ -17,6 +18,8 @@ public class MREx {
     //생성자 메서드 레퍼런스
     Supplier<String> s = String::new;
 
-
+    //바깥 인스턴스 메서드 레퍼런스
+    String str = "hello";
+    Predicate<String> p = str::equals;
 
 }
