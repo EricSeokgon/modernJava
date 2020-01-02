@@ -29,6 +29,10 @@ public class RunnableEx {
         BiPredicate<String, Integer> bp = (str, num) -> str.equals(Integer.toString(num));
         boolean test = bp.test("1", 1);
 
+        BiFunction<Integer, String, String> bf = (num, str) -> String.valueOf(num) + str;
+        String apply2 = bf.apply(5, "678");
+
+
 
     }
 }
