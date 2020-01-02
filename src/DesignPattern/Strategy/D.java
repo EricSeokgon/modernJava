@@ -1,4 +1,4 @@
-package DesignPattern;
+package DesignPattern.Strategy;
 
 class D {
     A a;

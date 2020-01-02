@@ -1,4 +1,4 @@
-package DesignPattern;
+package DesignPattern.Strategy;
 
 interface A {
     public String getString();
