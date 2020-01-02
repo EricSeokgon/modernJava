@@ -31,5 +31,10 @@ public class StreamEx2 {
         //Filter
         Stream<String> a = names.stream().filter(x -> x.contains("o"));
 
+        //Map
+        names.parallelStream().map((x) -> {
+            return x.concat("s");
+        }).forEach(x -> System.out.println(x));
+
     }
 }
