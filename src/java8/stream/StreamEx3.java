@@ -3,8 +3,7 @@ package java8.stream;
 import com.sun.xml.internal.ws.api.model.wsdl.WSDLOutput;
 
 import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.stream.*;
 
 public class StreamEx3 {
     public static void main(String[] args) {
@@ -63,5 +62,16 @@ public class StreamEx3 {
             System.out.println(str);
             return str.equals("d");
         });
+
+        ArrayList<Object> list1 = new ArrayList<>();
+        Stream<Integer> stream2 = Stream.of(1, 2, 3, 4, 5);
+        IntStream intStream = IntStream.of(1, 2, 3, 4, 5);
+        DoubleStream doubleStream = DoubleStream.of(1.0, 2.0, 3.0, 4.0, 5.0);
+        LongStream longStream = LongStream.of(1L, 2L, 3L, 4L, 5L);
+
+        intStream.sum();
+
+        List<Integer> collect = intStream.boxed().collect(Collectors.toList());
+
     }
 }
