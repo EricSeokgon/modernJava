@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Branching {
+public class Branching extends Methods {
     public static void main(String[] args) {
         Scanner fromUser = new Scanner(System.in);
         System.out.println("나이를 입력하세요");

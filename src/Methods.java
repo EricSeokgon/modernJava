@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Methods {
+public class Methods extends Person {
     public static void main(String[] args) {
         int a = 5;
         int b = 3;

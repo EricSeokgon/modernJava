@@ -37,6 +37,7 @@ public class PersonTest {
         IntSummaryStatistics ageSummary = person.stream()
                 .collect(Collectors.summarizingInt(p -> p.getAge()));
         System.out.println(ageSummary);
+
     }
 
 
