@@ -364,4 +364,5 @@ public class StreamEx {
         return Optional.ofNullable(collection).map(Collection::stream).orElseGet(Stream::empty);
     }
 
+
 }

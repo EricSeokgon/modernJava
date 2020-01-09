@@ -38,6 +38,18 @@ public class PersonTest {
                 .collect(Collectors.summarizingInt(p -> p.getAge()));
         System.out.println(ageSummary);
 
+        person.stream()
+                .filter(p -> p.getAge() >= 18)
+                .map(p -> p.getName())
+                .collect(Collectors.joining(" and ", "In Germany ", " are o flegal age."));
+
+        Map<Integer, String> map = person.stream()
+                .collect(Collectors.toMap(
+                        p -> p.getAge(),
+                        p -> p.getName(),
+                        (name1, name2) -> name1 + ";" + name2
+                ));
+
     }
 
 
