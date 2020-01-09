@@ -3,10 +3,8 @@ package java8.stream;
 import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
-import java.util.IntSummaryStatistics;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
 import static org.junit.Assert.*;
@@ -49,6 +47,16 @@ public class PersonTest {
                         p -> p.getName(),
                         (name1, name2) -> name1 + ";" + name2
                 ));
+
+        Collector<Person, StringJoiner, String> personNameCollector = Collector.of(
+                () -> new StringJoiner(" | "),
+                (j, p) -> j.add(p.getName().toUpperCase()),
+                (j1, j2) -> j1.merge(j2),
+                StringJoiner::toString);
+
+        String names = person.stream()
+                .collect(personNameCollector);
+        System.out.println(names);
 
     }
 
