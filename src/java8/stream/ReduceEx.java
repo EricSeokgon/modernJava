@@ -71,6 +71,17 @@ public class ReduceEx {
                 })
                 .forEach(s -> System.out.format("forEach : %s [%s]\n", s, Thread.currentThread().getName()));
 
+        Integer ageSum3 = persons.parallelStream()
+                .reduce(0, (sum, p) -> {
+                            System.out.format("accumulator: sum=%s; person%s\n", sum, p, Thread.currentThread().getName());
+                            int age = p.getAge();
+                            return sum += age;
+                        },
+                        (sum1, sum2) -> {
+                            System.out.format("combiner: sum1%s; sum2=%s\n", sum1, sum2, Thread.currentThread().getName());
+                            return sum1 + sum2;
+                        });
+
 
     }
 }
