@@ -15,6 +15,15 @@ public class ReduceEx {
                 .reduce((p1, p2) -> p1.getAge() > p2.getAge() ? p1 : p2)
                 .ifPresent(System.out::println);
 
+        Person result = persons.stream()
+                .reduce(new Person("", 0), (p1, p2) -> {
+                    p1.setAge(p2.getAge());
+                    p1.setName(p2.getName());
+                    return p1;
+                });
+
+        System.out.format("name=%s; age=%s", result.getName(), result.getAge());
+
 
     }
 }
