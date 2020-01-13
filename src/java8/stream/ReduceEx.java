@@ -40,5 +40,16 @@ public class ReduceEx {
                             System.out.format("combiner: sum1%s; sum2=%s\n", sum1, sum2);
                             return sum1 + sum2;
                         });
+
+        Integer ageSum2 = persons.parallelStream()
+                .reduce(0, (sum, p) -> {
+                            System.out.format("accumulator: sum=%s; person%s\n", sum, p);
+                            int age = p.getAge();
+                            return sum += age;
+                        },
+                        (sum1, sum2) -> {
+                            System.out.format("combiner: sum1%s; sum2=%s\n", sum1, sum2);
+                            return sum1 + sum2;
+                        });
     }
 }
