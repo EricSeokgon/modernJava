@@ -51,5 +51,19 @@ public class ReduceEx {
                             System.out.format("combiner: sum1%s; sum2=%s\n", sum1, sum2);
                             return sum1 + sum2;
                         });
+
+        Arrays.asList("a1", "a2", "b1", "c2", "c1")
+                .parallelStream()
+                .filter(s -> {
+                    System.out.format("filter: 5s [%s]\n", s, Thread.currentThread().getName());
+                    return true;
+                })
+                .map(s -> {
+                    System.out.format("map: %s [%s]\n", s, Thread.currentThread().getName());
+                    return s.toUpperCase();
+                })
+                .forEach(s -> System.out.format("forEach : %s [%s]\n", s, Thread.currentThread().getName()));
+
+
     }
 }
