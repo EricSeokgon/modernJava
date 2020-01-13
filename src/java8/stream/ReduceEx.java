@@ -23,7 +23,22 @@ public class ReduceEx {
                 });
 
         System.out.format("name=%s; age=%s", result.getName(), result.getAge());
+        System.out.println();
 
+        Integer ageSum = persons.stream()
+                .reduce(0, (sum, p) -> sum += p.getAge(), (sum1, sum2) -> sum1 + sum2);
 
+        System.out.println(ageSum);
+
+        Integer ageSum1 = persons.stream()
+                .reduce(0, (sum, p) -> {
+                            System.out.format("accumulator: sum=%s; person%s\n", sum, p);
+                            int age = p.getAge();
+                            return sum += age;
+                        },
+                        (sum1, sum2) -> {
+                            System.out.format("combiner: sum1%s; sum2=%s\n", sum1, sum2);
+                            return sum1 + sum2;
+                        });
     }
 }
