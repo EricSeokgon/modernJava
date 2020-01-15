@@ -9,7 +9,7 @@ public class Branching extends Methods {
         int age = Integer.parseInt(theAge);
 
         if (age >= 20 && age < 40) {
-            System.out.println("청녕");
+            System.out.println("청년");
 
         } else if (age >= 40 && age < 60) {
             System.out.println("장년");
