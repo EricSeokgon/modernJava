@@ -13,10 +13,20 @@ public class AccountTest {
 
     @Test
     public void testAccount() throws Exception {
-        Account account = new Account();
+        Account account = new Account(10000);
     }
 
-    public static void main(String[] args)  {
+    @Test
+    public void testGetBalance() throws Exception {
+        Account account = new Account(100000);
+        if (account.getBalance() == 10000) {
+            //fail("Error occured!");
+
+        }
+    }
+
+
+    public static void main(String[] args) {
         AccountTest test = new AccountTest();
         try {
             test.testAccount(); // 계좌 생성 테스트
