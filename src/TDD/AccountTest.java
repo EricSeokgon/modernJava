@@ -3,6 +3,9 @@ package TDD;
 
 import org.junit.Test;
 
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertThat;
+
 public class AccountTest {
     //todo 클래스 이름 Account  - 완료
     //todo 기능 세가지
@@ -13,16 +16,13 @@ public class AccountTest {
 
     @Test
     public void testAccount() throws Exception {
-        Account account = new Account(10000);
+        Account account = new Account(1000);
     }
 
     @Test
     public void testGetBalance() throws Exception {
-        Account account = new Account(100000);
-        if (account.getBalance() == 10000) {
-            //fail("Error occured!");
-
-        }
+        Account account = new Account(10000);
+        assertThat(10000, is(account.getBalance()));
     }
 
 
