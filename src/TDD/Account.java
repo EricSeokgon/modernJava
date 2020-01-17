@@ -1,10 +1,13 @@
 package TDD;
 
 public class Account {
-    public Account(int i) {
+    private int balnace;
 
+    public Account(int money) {
+        this.balnace = money;
     }
+
     public int getBalance() {
-        return 10000;
+        return this.balnace;
     }
 }
