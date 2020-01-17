@@ -10,7 +10,9 @@ public class AccountTest {
     //todo 클래스 이름 Account  - 완료
     //todo 기능 세가지
     //todo 잔고 조회
-    //todo 입금
+    //todo -10000원으로 계좌 생성
+    // TODO: 2020-01-17 잔고 조회 결과 일치
+    //todo 입금 - 완료
     //todo 출금
     //todo 금액은 원단위로
 
@@ -23,6 +25,12 @@ public class AccountTest {
     public void testGetBalance() throws Exception {
         Account account = new Account(10000);
         assertThat(10000, is(account.getBalance()));
+
+        account = new Account(1000);
+        assertThat(1000, is(account.getBalance()));
+
+        account = new Account(0);
+        assertThat(0, is(account.getBalance()));
     }
 
 
