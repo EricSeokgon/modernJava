@@ -11,11 +11,11 @@ public class Account {
         return this.balnace;
     }
 
-    public void deposit(int i) {
-        this.balnace += i;
+    public void deposit(int money) {
+        this.balnace += money;
     }
 
-    public void withdraw(int i) {
-        this.balnace -= i;
+    public void withdraw(int money) {
+        this.balnace -= money;
     }
 }
