@@ -33,6 +33,20 @@ public class AccountTest {
         assertThat(0, is(account.getBalance()));
     }
 
+    @Test
+    public void testDeposit() {
+        Account account = new Account(10000);
+        account.deposit(1000);
+        assertThat(11000, is(account.getBalance()));
+    }
+
+    @Test
+    public void testWithdraw() {
+        Account account = new Account(10000);
+        account.withdraw(1000);
+        assertThat(9000, is(account.getBalance()));
+    }
+
 
     public static void main(String[] args) {
         AccountTest test = new AccountTest();
